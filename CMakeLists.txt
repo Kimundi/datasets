@@ -1,4 +1,4 @@
-set(dataset_path ${CMAKE_CURRENT_SOURCE_DIR}/datasets CACHE PATH "The path to store datasets to")
+set(dataset_path ${CMAKE_CURRENT_SOURCE_DIR}/downloads CACHE PATH "The path to store datasets to")
 
 macro(dataset_target dataset_name dataset_config)
     add_custom_target(${dataset_name}
