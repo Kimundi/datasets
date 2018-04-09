@@ -1,5 +1,7 @@
-compacts sparse hashtable
+Tudocomp Datasets
 ========
+
+A collection of scripts and sources for the generation and gathering of a comprehensive text corpus.
 
 # Standalone usage
 
