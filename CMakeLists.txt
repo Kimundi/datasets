@@ -1,6 +1,6 @@
 set(dataset_path ${CMAKE_CURRENT_SOURCE_DIR}/downloads CACHE PATH "The path to store datasets to")
 
-OPTION(DATASET_ARGS "CLI args for the dataset script" "--delete_original")
+SET(DATASET_ARGS "--delete_original" CACHE STRING "CLI args for the dataset script, defaults to --delete_original")
 
 macro(dataset_target dataset_name dataset_config)
     add_custom_target(${dataset_name}
