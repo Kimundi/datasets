@@ -92,22 +92,26 @@ def download_and_extract(OUT_DIR, SIZES, URLS):
 
             sh.wget("-c", "-O", tmp_download_path, url, _fg=True)
 
-            if preprocess != "":
-                print("Extract downloaded file...")
-            if preprocess == "gz":
-                sh.gzip("-d", tmp_download_path)
-                tmp_download_path = remove_suffix(tmp_download_path)
-            elif preprocess == "7z":
-                _7z = sh.Command("7z")
-                _7z("e", "-o" + TMP_DIR, tmp_download_path)
-                sh.rm(tmp_download_path)
-                tmp_download_path = remove_suffix(tmp_download_path)
-            elif preprocess == "xz":
-                sh.xz("-d", tmp_download_path)
-                tmp_download_path = remove_suffix(tmp_download_path)
+            try:
+                if preprocess != "":
+                    print("Extract downloaded file...")
+                if preprocess == "gz":
+                    sh.gzip("-d", tmp_download_path)
+                    tmp_download_path = remove_suffix(tmp_download_path)
+                elif preprocess == "7z":
+                    _7z = sh.Command("7z")
+                    _7z("e", "-o" + TMP_DIR, tmp_download_path)
+                    sh.rm(tmp_download_path)
+                    tmp_download_path = remove_suffix(tmp_download_path)
+                elif preprocess == "xz":
+                    sh.xz("-d", tmp_download_path)
+                    tmp_download_path = remove_suffix(tmp_download_path)
 
-            sh.mv(tmp_download_path, target_path)
-
+                sh.mv(tmp_download_path, target_path)
+            except sh.CommandNotFound:
+                print("ERROR: Extraction command `{}` not found, skipping file!".format(preprocess))
+                print()
+                continue
         gen_prefix(target_path, SIZES)
 
         if not path.exists(str(stamp_target_path)):
