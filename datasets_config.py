@@ -53,9 +53,9 @@ download_and_extract("pcr", small_sizes, [
     TDC_URL + "/pc-real/kernel.xz",
     TDC_URL + "/pc-real/para.xz",
     TDC_URL + "/pc-real/world_leaders.xz",
-    TDC_URL + "/pc-repcorpus/artificial/fib41.xz",
-    TDC_URL + "/pc-repcorpus/artificial/rs.13.xz",
-    TDC_URL + "/pc-repcorpus/artificial/tm29.xz",
+    TDC_URL + "/pc-artificial/fib41.xz",
+    TDC_URL + "/pc-artificial/rs.13.xz",
+    TDC_URL + "/pc-artificial/tm29.xz",
 ])
 
 # # TAGME Datasets, see http://acube.di.unipi.it/datasets/
