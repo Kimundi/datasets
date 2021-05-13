@@ -3,13 +3,16 @@ small_sizes = [200, 100, 50, 10, 1]
 # Root of tudocomp provided mirrors of datasets
 TDC_URL = "dolomit.cs.uni-dortmund.de/tudocomp"
 
+# TODO: This server went offline
+# Only he-graph has an existing 200mb prefix on loebels system
+# TODO: Need to upload to our server
 # HashTag Datasets, see http://acube.di.unipi.it/datasets/
-ACUBE_URL = "http://acube.di.unipi.it/repo/he-graph"
-download_and_extract("hashtag", small_sizes, [
-    ACUBE_URL + "/graph/he-graph.txt.gz",
-    ACUBE_URL + "/relatedness/pairs.tsv",
-    ACUBE_URL + "/classification/crowdflower.tsv",
-])
+#ACUBE_URL = "http://acube.di.unipi.it/repo/he-graph"
+#download_and_extract("hashtag", small_sizes, [
+#    ACUBE_URL + "/graph/he-graph.txt.gz",
+#    ACUBE_URL + "/relatedness/pairs.tsv",
+#    ACUBE_URL + "/classification/crowdflower.tsv",
+#])
 
 # ASCII-only, no inner null commoncrawl.org extract
 download_and_extract("cc", small_sizes, [
